@@ -3,7 +3,7 @@ import NavBar from './components/NavBar'
 import Home from './pages/Home/Home'
 import Hero from './components/Hero'
 import About from './pages/About/About'
-import Categories from './components/Categories/Categories'
+import Categories from '../src/components/Categories/Categories.jsx'
 import Product from './components/Product/Product'
 import Footer from './components/footer/Footer'
 
