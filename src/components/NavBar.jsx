@@ -2,6 +2,7 @@ import React from "react";
 import {useState, useEffect} from 'react';
 import { Menu, X, ShoppingBag, Search } from 'lucide-react';
 import LOGO from "../assets/images/WRLD-WIDE LOGO.png"; // Adjust the path as necessary
+import {Link}  from 'react-router-dom'
 
 
 const NavBar = () => {
@@ -19,13 +20,12 @@ const [isScrolled, setIsScrolled] = useState(false);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { name: 'Living Room', href: '#living-room' },
-    { name: 'Dining Room', href: '#dining-room' },
-    { name: 'Bedroom', href: '#bedroom' },
-    { name: 'Office', href: '#office' },
-    { name: 'Sale', href: '#sale' }
-  ];
+  // const navItems = [
+  //   { name: 'Hero', to: '#hero' },
+  //   { name: 'Product', to: '#product' },
+  //   { name: 'Categories', to: '#categories' },
+  //   { name: 'About', to: '#about' }
+  // ];
 
 
   return (
@@ -40,41 +40,49 @@ const [isScrolled, setIsScrolled] = useState(false);
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#" className="text-2xl font-bold text-[#111827] italic">
+            <Link to="/hero" className="text-2xl font-bold text-[#111827] italic">
               WRLD-WIDE FURNISH
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8 text-[#111827] italic font-bold group-hover:text-[#111827]/90">
-              {navItems.map((item) => (
-                <a
+             <ul className="flex  justify-between items-center gap-[2rem] ">
+              <Link to={"/hero"}>
+                <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">Hero</li>
+              </Link>
+              <Link to={"/product"}>
+                <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">Product</li>
+              </Link>
+
+              <Link to={"/categories"}>
+                <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">Categories</li>
+              </Link>
+
+              <Link to={"/about"}>
+                <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">About</li>
+              </Link>
+            </ul>
+
+              {/* {navItems.map((item) => (
+                <Link>
+                <nav
                   key={item.name}
-                  href={item.href}
+                  to={item.to}
                   className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
                 >
                   {item.name}
-                </a>
-              ))}
+                </nav>
+                </Link> */}
+              {/* ))} */}
             </div>
-          </div>
-
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4 text-[#111827] ">
-            <button variant="ghost" size="icon">
-              <Search className="h-5 w-5" />
-            </button>
-            <button variant="ghost" size="icon">
-              <ShoppingBag className="h-5 w-5" />
-            </button>
-          </div>
+          </div> 
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              variant="ghost"
-              size="icon"
+             
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? (
@@ -89,7 +97,24 @@ const [isScrolled, setIsScrolled] = useState(false);
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-border text-white bg-[#111827] italic font-bold">
+             <div className="px-2 pt-2 pb-3 space-y-3 sm:px-3 border-t border-border text-white bg-[#111827] italic font-bold">
+             <ul className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-200 gap-[2rem]">
+              <Link to={"/hero"}>
+                <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">Hero</li>
+              </Link>
+              <Link to={"/product"}>
+                <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">Product</li>
+              </Link>
+
+              <Link to={"/categories"}>
+                <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">Categories</li>
+              </Link>
+
+              <Link to={"/about"}>
+                <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">About</li>
+              </Link>
+            </ul>
+            {/* <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-border text-white bg-[#111827] italic font-bold">
               {navItems.map((item) => (
                 <a
                   key={item.name}
@@ -99,15 +124,8 @@ const [isScrolled, setIsScrolled] = useState(false);
                 >
                   {item.name}
                 </a>
-              ))}
-              <div className="flex items-center space-x-4 px-3 py-2">
-                <button variant="ghost" size="icon">
-                  <Search className="h-5 w-5" />
-                </button>
-                <button variant="ghost" size="icon">
-                  <ShoppingBag className="h-5 w-5" />
-                </button>
-              </div>
+              ))} */}
+            
             </div>
           </div>
         )}

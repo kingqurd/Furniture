@@ -26,7 +26,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Facebook, href: '#facebook', label: 'Facebook' },
-    { icon: Instagram, href: '#instagram', label: 'Instagram' },
+    { icon: Instagram, href: 'https://www.instagram.com/kingqurd_004?igsh=a3JneHVxMmczYmpu&utm_source=qr', label: 'Instagram' },
      { icon: PiTiktokLogo, href: '#tiktok', label: 'TikTok' },
     { icon: PiTelegramLogoBold, href: 't_me-worldwide310410510', label: 'Telegram' },
     // { icon: Telegram, href: '#telegram', label: 'Telegram' }
