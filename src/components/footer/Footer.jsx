@@ -29,7 +29,7 @@ const Footer = () => {
     { icon: Facebook, href: 'https://www.facebook.com/share/1689XSpVtr/?mibextid=wwXlfr', label: 'Facebook' },
     { icon: Instagram, href: 'https://www.instagram.com/wrld_wide_furnish?igsh=b3Y5dscjBiN2c4&utm_source=qr', label: 'Instagram' },
      { icon: PiTiktokLogo, href: 'https://www.tiktok.com/@wrld_wide_furnish?_t=ZS-8ylCGkLWNTM&_r=1', label: 'TikTok' },
-     { icon: MdAlternateEmail, href: 'wrldwidefurnish@gmail.com', label: 'Email' },
+     { icon: MdAlternateEmail, href:'mailto:wrldwidefurnish@gmail.com', label: 'Email' },
     
     
   ];
