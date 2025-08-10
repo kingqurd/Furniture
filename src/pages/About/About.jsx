@@ -5,7 +5,7 @@ const About = () => {
     {
       icon: Truck,
       title: 'Free Delivery',
-      description: 'Free shipping on orders over $500'
+      description: 'Free shipping on orders over #750,000'
     },
     {
       icon: Shield,

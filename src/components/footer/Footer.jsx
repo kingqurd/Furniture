@@ -1,6 +1,7 @@
-import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Facebook, Instagram} from 'lucide-react';
 import { PiTelegramLogoBold } from "react-icons/pi";
 import { PiTiktokLogo } from "react-icons/pi"
+import { MdAlternateEmail } from "react-icons/md";
 
 const Footer = () => {
   const footerLinks = {
@@ -25,11 +26,12 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Facebook, href: '#facebook', label: 'Facebook' },
-    { icon: Instagram, href: 'https://www.instagram.com/kingqurd_004?igsh=a3JneHVxMmczYmpu&utm_source=qr', label: 'Instagram' },
-     { icon: PiTiktokLogo, href: '#tiktok', label: 'TikTok' },
-    { icon: PiTelegramLogoBold, href: 't_me-worldwide310410510', label: 'Telegram' },
-    // { icon: Telegram, href: '#telegram', label: 'Telegram' }
+    { icon: Facebook, href: 'https://www.facebook.com/share/1689XSpVtr/?mibextid=wwXlfr', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/wrld_wide_furnish?igsh=b3Y5dscjBiN2c4&utm_source=qr', label: 'Instagram' },
+     { icon: PiTiktokLogo, href: 'https://www.tiktok.com/@wrld_wide_furnish?_t=ZS-8ylCGkLWNTM&_r=1', label: 'TikTok' },
+     { icon: MdAlternateEmail, href: 'wrldwidefurnish@gmail.com', label: 'Email' },
+    
+    
   ];
 
   return (
