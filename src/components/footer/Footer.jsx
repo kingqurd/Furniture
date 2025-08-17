@@ -46,7 +46,7 @@ const Footer = () => {
             <p className="text-primary-foreground/80 mb-6 ">
               Get the latest updates on new products and exclusive offers.
             </p>
-            <div className="flex gap-2">
+            {/* <div className="flex gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -55,7 +55,7 @@ const Footer = () => {
               <button className="whitespace-nowrap bg-[#111827] w-[20%] h-[2rem] rounded-xl text-white font-bold hover:italic">
                 Subscribe
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
 
