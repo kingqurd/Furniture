@@ -28,12 +28,14 @@ import IMG23 from "../../assets/images/IMG-20250727-WA0077.jpg";
 import IMG24 from "../../assets/images/IMG-20250727-WA0078.jpg";
 import IMG25 from "../../assets/images/IMG-20250727-WA0079.jpg";
 import IMG26 from "../../assets/images/IMG-20250727-WA0080.jpg";
-import cabinet from '../../assets/images/cabimet4.jpeg'
-import cabinet2 from '../../assets/images/cabinet.jpeg'
-import cabinet3 from '../../assets/images/cabinet2.jpeg'
-import cabinet4 from '../../assets/images/cabinet5.jpeg'
-import cabinet5 from '../../assets/images/cabinet6.jpeg'
-import { useState, useRef } from "react";
+import cabinet from "../../assets/images/cabimet4.jpeg";
+import cabinet2 from "../../assets/images/cabinet.jpeg";
+import cabinet3 from "../../assets/images/cabinet2.jpeg";
+import cabinet4 from "../../assets/images/cabinet5.jpeg";
+import cabinet5 from "../../assets/images/cabinet6.jpeg";
+import { useState, useRef, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FeaturedProducts = () => {
   const [showItems, setShowItems] = useState(6);
@@ -328,6 +330,14 @@ const FeaturedProducts = () => {
     }
   };
 
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 800,
+      aesing: "eas-in-sine",
+      delay: 300,
+    });
+  }, []);
   return (
     <section className="py-20 bg-gradient-hero">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -341,13 +351,19 @@ const FeaturedProducts = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          // data-aos-ancor-placement="top-bottom"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {products.slice(0, showItems).map((product) => (
             <span
               key={product.id}
               className="group cursor-pointer border-0 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-2 bg-card"
             >
-              <div className="aspect-square overflow-hidden rounded-t-lg">
+              <div
+                data-aos="fade-right"
+                className="aspect-square overflow-hidden rounded-t-lg"
+              >
                 <img
                   src={product.image}
                   alt={product.name}
@@ -378,7 +394,7 @@ const FeaturedProducts = () => {
                     onClick={() =>
                       window.open(`https://wa.me/${phoneNum}`, "_blank")
                     }
-                    className="opacity-0 group-hover:opacity-100 group-hover:bg-[#111827] w-[30%] h-[2rem] rounded-lg group-hover:text-white transition-opacity duration-300"
+                    className="opacity-0 group-hover:opacity-100 group-hover:bg-[#111827] w-[30%] h-[2rem] rounded-xl group-hover:text-white transition-opacity duration-300"
                   >
                     Negotiate
                   </button>

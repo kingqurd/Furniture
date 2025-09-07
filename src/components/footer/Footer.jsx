@@ -1,37 +1,61 @@
-import { Facebook, Instagram} from 'lucide-react';
-import { PiTelegramLogoBold } from "react-icons/pi";
-import { PiTiktokLogo } from "react-icons/pi"
+import { Facebook, Instagram } from "lucide-react";
+import { PiTiktokLogo } from "react-icons/pi";
 import { MdAlternateEmail } from "react-icons/md";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Footer = () => {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 800,
+      aesing: "eas-in-sine",
+      delay: 100,
+    });
+  }, []);
   const footerLinks = {
     shop: [
-      { name: 'Living Room', href: '#living-room' },
-      { name: 'Dining Room', href: '#dining-room' },
-      { name: 'Bedroom', href: '#bedroom' },
-      { name: 'Office', href: '#office' }
+      { name: "Living Room", href: "#living-room" },
+      { name: "Dining Room", href: "#dining-room" },
+      { name: "Bedroom", href: "#bedroom" },
+      { name: "Office", href: "#office" },
     ],
     support: [
-      { name: 'Customer Service', href: '#support' },
-      { name: 'Shipping Info', href: '#shipping' },
-      { name: 'Returns', href: '#returns' },
-      { name: 'Size Guide', href: '#size-guide' }
+      { name: "Customer Service", href: "#support" },
+      { name: "Shipping Info", href: "#shipping" },
+      { name: "Returns", href: "#returns" },
+      { name: "Size Guide", href: "#size-guide" },
     ],
     company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Careers', href: '#careers' },
-      { name: 'Press', href: '#press' },
-      { name: 'Sustainability', href: '#sustainability' }
-    ]
+      { name: "About Us", href: "#about" },
+      { name: "Careers", href: "#careers" },
+      { name: "Press", href: "#press" },
+      { name: "Sustainability", href: "#sustainability" },
+    ],
   };
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://www.facebook.com/share/1689XSpVtr/?mibextid=wwXlfr', label: 'Facebook' },
-    { icon: Instagram, href: 'https://www.instagram.com/wrld_wide_furnish?igsh=b3Y5dscjBiN2c4&utm_source=qr', label: 'Instagram' },
-     { icon: PiTiktokLogo, href: 'https://www.tiktok.com/@wrld_wide_furnish?_t=ZS-8ylCGkLWNTM&_r=1', label: 'TikTok' },
-     { icon: MdAlternateEmail, href:'mailto:wrldwidefurnish@gmail.com', label: 'Email' },
-    
-    
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/share/1689XSpVtr/?mibextid=wwXlfr",
+      label: "Facebook",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/wrld_wide_furnish?igsh=b3Y5dscjBiN2c4&utm_source=qr",
+      label: "Instagram",
+    },
+    {
+      icon: PiTiktokLogo,
+      href: "https://www.tiktok.com/@wrld_wide_furnish1?_t=ZS-8zWRgY3haK1&_r=1",
+      label: "TikTok",
+    },
+    {
+      icon: MdAlternateEmail,
+      href: "mailto:wrldwidefurnish@gmail.com",
+      label: "Email",
+    },
   ];
 
   return (
@@ -63,7 +87,7 @@ const Footer = () => {
         <div className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Brand */}
-            <div className="lg:col-span-2">
+            <div data-aos="slide-up" className="lg:col-span-2">
               <h2 className="text-3xl font-bold mb-4 text-[#111827] italic">
                 WRLD-WIDE FURNISH
               </h2>
@@ -89,7 +113,7 @@ const Footer = () => {
             </div>
 
             {/* Shop Links */}
-            <div>
+            <div data-aos="zoom-out">
               <h4 className="text-lg font-semibold mb-4 text-[#111827] italic">
                 Shop
               </h4>
@@ -108,7 +132,7 @@ const Footer = () => {
             </div>
 
             {/* Support Links */}
-            <div>
+            <div data-aos="zoom-out">
               <h4 className="text-lg font-semibold mb-4 text-[#111827] italic">
                 Support
               </h4>
@@ -127,7 +151,7 @@ const Footer = () => {
             </div>
 
             {/* Company Links */}
-            <div>
+            <div data-aos="zoom-out">
               <h4 className="text-lg font-semibold mb-4 text-[#111827] italic">
                 Company
               </h4>

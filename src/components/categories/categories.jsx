@@ -1,9 +1,21 @@
 import { Sofa, ChefHat, Bed, Briefcase } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
+
 // import Button from '/components/Button/Button'
 const Categories = () => {
+useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 800,
+      aesing: "eas-in-sine",
+      delay: 100,
+    });
+  }, []);
 
   const phoneNum = "+2349063479592";
-
 
   const categories = [
     {
@@ -48,7 +60,10 @@ const Categories = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          data-aos="zoom-out"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           {categories.map((category) => {
             const IconComponent = category.icon;
             return (
@@ -73,7 +88,9 @@ const Categories = () => {
           /> */}
                   <button
                     className="w-[70%] h-[2rem] rounded-lg group-hover:bg-[#111827] group-hover:text-white group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
-                    onClick={() => window.open(`https://wa.me/${phoneNum}`,'_blank')}
+                    onClick={() =>
+                      window.open(`https://wa.me/${phoneNum}`, "_blank")
+                    }
                   >
                     Contact Us
                   </button>
