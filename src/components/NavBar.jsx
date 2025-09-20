@@ -117,6 +117,11 @@ const NavBar = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-3 sm:px-3 border-t border-border text-white bg-[#111827] italic font-bold">
               <ul className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-200 gap-[2rem]">
+                <Link to={"/"}>
+                  <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                   
+                  </li>
+                </Link>
                 <Link to={"/hero"}>
                   <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
                     Hero
