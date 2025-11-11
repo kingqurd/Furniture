@@ -48,7 +48,7 @@ const Footer = () => {
     },
     {
       icon: PiTiktokLogo,
-      href: "https://www.tiktok.com/@wrld_wide_furnish1?_t=ZS-8zWRgY3haK1&_r=1",
+      href: "https://www.tiktok.com/@wrld_wide_furnish1?_r=1&_t=ZS-91IDFfysc5K",
       label: "TikTok",
     },
     {

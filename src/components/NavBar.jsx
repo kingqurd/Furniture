@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-// import LOGO from "../assets/images/WRLD-WIDE LOGO.png"; // Adjust the path as necessary
+import LOGO from "../assets/images/WRLD-WIDE LOGO.png"; // Adjust the path as necessary
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -16,9 +16,16 @@ const NavBar = () => {
     });
   }, []);
 
-  const [isOpen, setIsOpen] = useState();
+  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -61,7 +68,7 @@ const NavBar = () => {
               data-aos="slide-left"
               className="ml-10 flex items-baseline space-x-8 text-[#111827] italic font-bold group-hover:text-[#111827]/90"
             >
-              <ul className="flex  justify-between items-center gap-[2rem] ">
+              <ul className="flex  justify-between items-center gap-[2rem]">
                 <Link to={"/hero"}>
                   <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
                     Hero
@@ -114,33 +121,53 @@ const NavBar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-3 sm:px-3 border-t border-border text-white bg-[#111827] italic font-bold">
-              <ul className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-200 gap-[2rem]">
-                <Link to={"/"}>
-                  <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
-                   
-                  </li>
+          <div data-aos="slide-down" className="md:hidden">
+            <div
+              data-aos="slide-left"
+              onClick={handleToggle}
+              className="px-4 pt-2 pb-3 space-y-3 sm:px-3 border-t border-border text-[#111827] bg-background/95  backdrop-blur italic font-bold rounded-xl"
+            >
+              <ul className="block px-2 p- text-foreground hover:text-primary transition-colors duration-200 gap-[2rem]">
+                <Link to={"/"} onClick={handleLinkClick}>
+                  <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium"></li>
                 </Link>
-                <Link to={"/hero"}>
-                  <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                <Link to={"/hero"} onClick={handleLinkClick}>
+                  <li
+                    data-aos="slide-right"
+                    className="text-start hover:text-primary pb-4 transition-colors duration-200 font-medium"
+                  >
                     Hero
                   </li>
                 </Link>
-                <Link to={"/product"}>
-                  <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                <Link to={"/product"} onClick={handleLinkClick}>
+                  <li
+                    data-aos="slide-left"
+                    className="text-end hover:text-primary pb-4 transition-colors duration-200 font-medium"
+                  >
                     Product
                   </li>
                 </Link>
+                <img
+                  onClick={handleLinkClick}
+                  data-aos="zoom-in"
+                  src={LOGO}
+                  className="w-[90%] h-[8rem] px-8 pl-20 items-center rounded-lg"
+                />
 
-                <Link to={"/categories"}>
-                  <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                <Link to={"/categories"} onClick={handleLinkClick}>
+                  <li
+                    data-aos="slide-right"
+                    className="text-start hover:text-primary pb-4  transition-colors duration-200 font-medium"
+                  >
                     Categories
                   </li>
                 </Link>
 
-                <Link to={"/about"}>
-                  <li className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                <Link to={"/about"} onClick={handleLinkClick}>
+                  <li
+                    data-aos="slide-left"
+                    className="text-end hover:text-primary pb-4 transition-colors duration-200 font-medium"
+                  >
                     About
                   </li>
                 </Link>
