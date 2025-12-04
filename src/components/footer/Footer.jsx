@@ -38,7 +38,7 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Facebook,
-      href: "https://www.facebook.com/share/1689XSpVtr/?mibextid=wwXlfr",
+      href: "https://www.facebook.com/share/1ARvnvXWxD",
       label: "Facebook",
     },
     {
