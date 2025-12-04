@@ -43,7 +43,7 @@ const Footer = () => {
     },
     {
       icon: Instagram,
-      href: "https://www.instagram.com/wrld_wide_furnish?igsh=b3Y5dscjBiN2c4&utm_source=qr",
+      href: "https://www.instagram.com/wrldwide377?igsh=MTFneTFlajVmd2UzZw==",
       label: "Instagram",
     },
     {
